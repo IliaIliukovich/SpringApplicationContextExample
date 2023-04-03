@@ -1,6 +1,14 @@
 package com.example.applicationcontextexample;
 
+import org.springframework.stereotype.Component;
+
+@Component(value = "france")
 public class Country {
+
+    public Country() {
+        name = "France";
+        code = "FR";
+    }
 
     private String name;
 

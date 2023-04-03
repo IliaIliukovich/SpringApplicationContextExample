@@ -32,8 +32,26 @@ public class Person {
         this.country = country;
     }
 
+    public Person() {
+    }
+
+    public Person(String name, int age, Country country) {
+        this.name = name;
+        this.age = age;
+        this.country = country;
+    }
+
     @Override
     public String toString() {
         return "Person{" + "name='" + name + '\'' + ", age=" + age + ", country=" + country + '}';
     }
+
+    public void introduce(){
+        System.out.println(Person.class + ": actions on init step");
+    }
+
+    public void finishOperation(){
+        System.out.println(Person.class + ": final work with bean");
+    }
+
 }

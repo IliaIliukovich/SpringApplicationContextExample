@@ -3,25 +3,33 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="com.example.applicationcontextexample.HelloWorld" id="helloWorld" scope="prototype"/>
+<!--    <bean class="com.example.applicationcontextexample.HelloWorld" id="helloWorld" scope="prototype"/>-->
 
-    <bean class="com.example.applicationcontextexample.Country" id="germany">
-        <property name="name" value="Germany"/>
-        <property name="code" value="GE"/>
-    </bean>
-    <bean class="com.example.applicationcontextexample.Country" id="france">
-        <property name="name" value="France"/>
-        <property name="code" value="FR"/>
-    </bean>
-    <bean class="com.example.applicationcontextexample.Person" id="person1">
-        <property name="name" value="Tom"/>
-        <property name="age" value="25"/>
-        <property name="country" ref="germany"/>
-    </bean>
-    <bean class="com.example.applicationcontextexample.Person" id="person2">
-        <property name="name" value="Bob"/>
-        <property name="age" value="33"/>
-        <property name="country" ref="france"/>
-    </bean>
+<!--    <bean class="com.example.applicationcontextexample.Country" id="germany">-->
+<!--        <property name="name" value="Germany"/>-->
+<!--        <property name="code" value="GE"/>-->
+<!--    </bean>-->
+<!--    <bean class="com.example.applicationcontextexample.Country" id="france">-->
+<!--        <property name="name" value="France"/>-->
+<!--        <property name="code" value="FR"/>-->
+<!--    </bean>-->
+<!--    <bean class="com.example.applicationcontextexample.Person" id="person1">-->
+<!--        <property name="name" value="Tom"/>-->
+<!--        <property name="age" value="25"/>-->
+<!--        <property name="country" ref="france"/>-->
+<!--    </bean>-->
+<!--    <bean class="com.example.applicationcontextexample.Person"-->
+<!--          id="person2"-->
+<!--          init-method="introduce"-->
+<!--          destroy-method="finishOperation"-->
+<!--          lazy-init="true"-->
+<!--    >-->
+<!--        <constructor-arg name="name" value="Bob"/>-->
+<!--        <constructor-arg name="age" value="33"/>-->
+<!--        <constructor-arg name="country" ref="france"/>-->
+<!--&lt;!&ndash;        <property name="name" value="Bob"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="age" value="33"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="country" ref="france"/>&ndash;&gt;-->
+<!--    </bean>-->
 
 </beans>
