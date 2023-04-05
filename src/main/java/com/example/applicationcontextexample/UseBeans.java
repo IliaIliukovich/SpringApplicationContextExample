@@ -1,6 +1,7 @@
 package com.example.applicationcontextexample;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -13,10 +14,12 @@ public class UseBeans {
     private final Country france;
 
 //    @Autowired
-    private final Person person1;
+//    @Qualifier("person1")
+    private final Person personOne;
 
 //    @Autowired
-    private final Person person2;
+//    @Qualifier("person2")
+    private final Person personTwo;
 
 //    @Autowired
 //    public void setHelloWorld(HelloWorld helloWorld) {
@@ -39,19 +42,22 @@ public class UseBeans {
 //    }
 
     @Autowired
-    public UseBeans(HelloWorld helloWorld, Country france, Person person1, Person person2) {
+    public UseBeans(HelloWorld helloWorld,
+                    Country france,
+                    @Qualifier("person1") Person personOne,
+                    @Qualifier("person2") Person personTwo) {
         this.helloWorld = helloWorld;
         this.france = france;
-        this.person1 = person1;
-        this.person2 = person2;
+        this.personOne = personOne;
+        this.personTwo = personTwo;
     }
 
     public void method(){
         System.out.println("Method in UseBeans class invoked");
         System.out.println(helloWorld.getMessage());
         System.out.println(france);
-        System.out.println(person1);
-        System.out.println(person2);
+        System.out.println(personOne);
+        System.out.println(personTwo);
     }
 
 }

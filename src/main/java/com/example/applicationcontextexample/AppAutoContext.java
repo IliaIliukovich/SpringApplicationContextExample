@@ -3,21 +3,19 @@ package com.example.applicationcontextexample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.*;
 
-@Configuration
-@ComponentScan(basePackages = "com.example.applicationcontextexample")
-//@SpringBootApplication
+//@Configuration
+//@ComponentScan(basePackages = "com.example.applicationcontextexample")
+@SpringBootApplication
+@PropertySource("classpath:application.properties")
 public class AppAutoContext {
 
     @Autowired
     private Country france;
 
-    @Bean
-    public Person person1(){
+    @Bean("person1")
+    public Person personMethod(){
         Person person = new Person("Bob", 25, france);
         return person;
     }

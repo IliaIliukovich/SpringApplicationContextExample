@@ -1,5 +1,6 @@
 package com.example.applicationcontextexample;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -12,7 +13,8 @@ public class AppMain {
 
 //        ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 //        ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(AppContext.class);
-        ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(AppAutoContext.class);
+//        ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(AppAutoContext.class);
+        ConfigurableApplicationContext context = SpringApplication.run(AppAutoContext.class, args);
         System.out.println("Context created");
 
         HelloWorld helloWorld = (HelloWorld) context.getBean("helloWorld");

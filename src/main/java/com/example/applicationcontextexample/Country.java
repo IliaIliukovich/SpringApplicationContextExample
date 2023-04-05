@@ -1,17 +1,15 @@
 package com.example.applicationcontextexample;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component(value = "france")
 public class Country {
 
-    public Country() {
-        name = "France";
-        code = "FR";
-    }
-
+    @Value("${country.name}")
     private String name;
 
+    @Value("${country.code}")
     private String code;
 
     public String getName() {
